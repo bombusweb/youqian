@@ -19,10 +19,6 @@ class BasePageHandler(tornado.web.RequestHandler):
         
         
         
-        
-        
-    
-        
     def _check_is_wap(self):
         user_agent = self.request.headers.get('user-agent', '')
         if user_agent != '' and base.regex.re_user_agent.search(user_agent):

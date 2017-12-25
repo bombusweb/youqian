@@ -34,3 +34,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    SystemLogger.info('测试')

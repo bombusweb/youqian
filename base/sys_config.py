@@ -18,18 +18,23 @@ class SystemConfig(object):
     
     def __init__(self):
         
-        self.redis = {
+        self.redis_master = {
             'host'      : '',
             'port'      : 0,
             'db'        : 0,
-            'password'  : '',
-            'expire'    : 0,
+            'password'  : ''
+        }
+        self.redis_slave = {
+            'host'      : '',
+            'port'      : 0,
+            'db'        : 0,
+            'password'  : ''
         }
         self.mysql = {
             'host'      : '',
             'db'        : '',
             'user'      : '',
-            'password'  : '',
+            'password'  : ''
             }
         self.db_cluster_dict={} #{dbname:{host:db,user,pwd,}}
         
@@ -39,17 +44,23 @@ class SystemConfig(object):
         config_instance = ConfigParser.ConfigParser()
         config_instance.read(dir+'/config.ini')
         
-        for key in self.redis:
-            if type(self.redis[key]) == int:
-                self.redis[key] = int(config_instance.get('redis', key))
+        for key in self.redis_master:
+            if type(self.redis_master[key]) == int:
+                self.redis_master[key] = int(config_instance.get('redis_master', key))
             else:
-                self.redis[key] = config_instance.get('redis', key)
-                
+                self.redis_master[key] = config_instance.get('redis_master', key)
+        
+        for key in self.redis_slave:
+            if type(self.redis_slave[key]) == int:
+                self.redis_slave[key] = int(config_instance.get('redis_slave', key))
+            else:
+                self.redis_slave[key] = config_instance.get('redis_slave', key)
+                        
         self.db_cluster = config_instance.get('db_cluster', 'db').split(',')
         
         for db in self.db_cluster:
             db_name = db.split(':')[0]
+            each_dict={}
             for key in self.mysql:
-                each_dict={}
                 each_dict[key] = config_instance.get(db_name, key)
                 self.db_cluster_dict[db_name] = each_dict

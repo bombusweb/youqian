@@ -4,6 +4,7 @@
 import os
 import logging.handlers
 import threading
+import time
 
 class SystemLogger(object):
     _instance_lock = threading.Lock()
@@ -23,16 +24,24 @@ class SystemLogger(object):
         console.setFormatter(formatter)
         self.logger.addHandler(console)
         path=os.path.dirname(os.path.realpath(__file__))
-        # system_log_file='./sysem.log.' + str(os.getpid())
-        system_log_file='./sysem.log'
+#         system_log_file=path+'/'+str(os.getpid())+'.sysem.log'
+        system_log_file=path+'/'+'sysem.log'
         file_handler = logging.handlers.TimedRotatingFileHandler(
                             filename=os.path.join(path,system_log_file),
-                            when='D',
-                            interval=10,
+                            when='h',
+                            interval=12,
                             backupCount=100
                         )
         file_handler.setFormatter(formatter)
         self.logger.addHandler(file_handler)
         self.logger.setLevel('DEBUG')
         
-SystemLogger=SystemLogger.instance().logger
+        
+SystemLogger = SystemLogger.instance().logger
+
+if __name__ == "__main__":  
+#     SystemLogger=SystemLogger.instance().logger
+#     while True:
+#         time.sleep(30)
+#         SystemLogger.info('>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    pass
