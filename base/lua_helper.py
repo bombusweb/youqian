@@ -39,23 +39,22 @@ redis_master=redis_helper.RedisMaster.instance().redis_master
 # """
  
 lua = """
-if redis.call("HEXISTS", KEYS[1],KEYS[2]) == 1 then
+if redis.call("HEXISTS", KEYS[1],KEYS[2]) == 0 then
+    local empty_list_string = "[]"
+    redis.call("HSET", KEYS[1],KEYS[2],empty_list_string)
+end 
     local list_in_redis = redis.call('HGET',KEYS[1],KEYS[2])
     local table_in_lua=cjson.decode(list_in_redis)
     local dict_from_argv=cjson.decode(ARGV[1])
     table.insert(table_in_lua,dict_from_argv)
     local json_from_table=cjson.encode(table_in_lua)
     redis.call("HSET", KEYS[1],KEYS[2],json_from_table)
+    redis.call('expire',KEYS[1], ARGV[2])
     return (json_from_table)
-else
-    local empty_list_string = "[]"
-    redis.call("HSET", KEYS[1],KEYS[2],empty_list_string)
-    return empty_list_string
-end 
 """
 
- 
 helper = redis_master.register_script(lua)
 dict_to_redis={'key':time.time()}
 json_to_redis=json.dumps(dict_to_redis) 
-print helper(keys=['setkey','filed'], args=[json_to_redis])
+expire_time_seconde=50
+print helper(keys=['setkey','filed'], args=[json_to_redis,expire_time_seconde])
