@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+<head>
+	<title>{{page_param['title']}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{page_param['keywords']}}">
+    <meta name="description" content="{{page_param['description']}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="{{ page_param['static_host'] }}/static/heiniu_loan3/css/wap-end.css?v=1.0.3">
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/jquery-3.2.1.min.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/base/wap-base.js"></script>
+    <script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=750){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+    </script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?04a46bd3fbc0f32258e2247ac21de043";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<input id="static-host" type="hidden" value="{{ page_param['static_host'] }}">
+<!-- 顶部 -->
+<div class="wrap head-box">
+    <a class="top" href="{{page_param.get('tiaozhuan_link')}}">
+        <em></em>
+        <p>小额在线贷款，10分钟到账</p>
+        <span>马上拿钱</span>
+    </a>
+    <div class="plan-box">
+        <h3>{{page_param.get('surname')}}您好，以下是您的贷款方案</h3>
+        <div class="msg-box">
+            <p>您想借款：<span>{{page_param.get('amount')}}</span></p>
+            <p>您的资质：
+                {% for item in page_param.get('user_loan_details') %}
+                <span>{{item['name']}}<em class="{{item['value']}}"></em></span>
+                {% end %}
+            </p>
+        </div>
+    </div>
+</div>
+{% if page_param.get('loan_type') == 'big' %}
+<!-- 推荐 -->
+<div class="wrap">
+    <div class="recommend-box">
+        <h6 class="item-title">
+            <em>1</em>
+            <p>{{page_param['text1_list'][0]}}<a href="javascript:;">{{page_param['text1_list'][1]}}</a></p>
+        </h6>
+        <div class="logos-box clearfix">
+            {% for logo_src in page_param.get('company_logo_list') %}
+            <div class="fl logo">
+                <img src="{{logo_src}}" alt="">
+            </div>
+            {% end %}
+        </div>
+        <p>以上商户会尽快电话联系您的，请耐心等待哦</p>
+    </div>
+</div>
+{% end %}
+
+<!-- 信用卡 -->
+{% if page_param.get('show_pos') and page_param.get('loan_type') == 'big'%}
+<div class="wrap credit-box">
+    <h6 class="item-title">
+        <em>2</em>
+        <p>您有信用卡，为您推荐个人POS刷卡机</p>
+    </h6>
+    <div class="credit-ad-box">
+        <a class="clearfix" href="{{page_param['pos_dict']['link']}}">
+          <div class="fl logo">
+            <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/end/wap-fulinmen.png" alt="">
+          </div>
+          <div class="fl msg">
+            <h3>POS刷卡机 用钱不用求人</h3>
+            <p>原价198元 限量1000台</p>
+            <p>费率最低0.35% 实时到账</p>
+          </div>
+          <div class="fr red-packet">
+            <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/end/wap-packet.png" alt="">
+          </div>
+        </a>
+    </div>
+</div>
+{% end %}
+
+<!-- 建议 -->
+<div class="wrap suggest-box">
+    <h6 class="item-title">
+        {% if page_param.get('show_pos') %}
+            {% if page_param.get('loan_type') == 'big' %}
+                <em>3</em>
+            {% else %}
+                <em>1</em>
+            {% end %}
+        {% else %}
+            {% if page_param.get('loan_type') == 'big' %}
+                <em>2</em>
+            {% else %}
+
+            {% end %}
+        {% end %}
+        {% if page_param.get('loan_type') == 'big' %}
+        <p>您目前的申请通过率为<a href="javascript:;">{{page_param.get('pass_rate')}}</a>，建议您再申请<a href="javascript:;">3家</a>，贷款通过率可达到<a href="javascript:;">95%</a></p>
+        {% else %}
+            <p>根据您的资质，为您推荐以下商户，请直接申请：申请<a href="javascript:;">1家</a>的通过率为<a href="javascript:;">40%</a>，申请<a href="javascript:;">3家</a>的通过率为<a href="javascript:;">90%</a></p>
+        {% end %}
+    </h6>
+</div>
+<div class="wrap suggest-nav-box clearfix">
+    <a class="fl active" href="javascript:;"><span>通过率高</span></a>
+    <a class="fl" href="javascript:;"><span>放款最快</span></a>
+    <a class="fl" href="javascript:;"><span>利率最低</span></a>
+</div>
+
+<div class="wrap suggest-content-box" style="display: block;">
+    {% for item in page_param['loan_tab_dict']['loan_default'] %}
+    <div class="suggest-list-box">
+        <div class="list-item">
+            <h3><em class="{{item['logo']}}"></em>{{item['company']}}</h3>
+            <div class="msg-box">
+                <p><span>可贷金额</span><span>{{item['amount']}}</span></p>
+                <p><span>参考月利率</span><span>{{item['interest']}}</span></p>
+                <p><span>最快下款</span><span>{{item['time']}}</span></p>
+                <a href="{{item['link']}}">立即申请</a>
+            </div>
+        </div>
+        <p>{{item['word']}}</p>
+    </div>
+    {% end %}
+</div>
+<div class="wrap suggest-content-box">
+   {% for item in page_param['loan_tab_dict']['loan_speed'] %}
+    <div class="suggest-list-box">
+        <div class="list-item">
+            <h3><em class="{{item['logo']}}"></em>{{item['company']}}</h3>
+            <div class="msg-box">
+                <p><span>可贷金额</span><span>{{item['amount']}}</span></p>
+                <p><span>参考月利率</span><span>{{item['interest']}}</span></p>
+                <p><span>最快下款</span><span>{{item['time']}}</span></p>
+                <a href="{{item['link']}}">立即申请</a>
+            </div>
+        </div>
+        <p>{{item['word']}}</p>
+    </div>
+    {% end %}
+</div>
+<div class="wrap suggest-content-box">
+    {% for item in page_param['loan_tab_dict']['loan_interest'] %}
+    <div class="suggest-list-box">
+        <div class="list-item">
+            <h3><em class="{{item['logo']}}"></em>{{item['company']}}</h3>
+            <div class="msg-box">
+                <p><span>可贷金额</span><span>{{item['amount']}}</span></p>
+                <p><span>参考月利率</span><span>{{item['interest']}}</span></p>
+                <p><span>最快下款</span><span>{{item['time']}}</span></p>
+                <a href="{{item['link']}}">立即申请</a>
+            </div>
+        </div>
+        <p>{{item['word']}}</p>
+    </div>
+    {% end %}
+</div>
+<!--<a class="more" href="javascript:;">查看更多贷款机构<em></em></a>-->
+
+{% if page_param.get('show_pos') and page_param.get('loan_type') == 'small'%}
+<div class="wrap credit-box">
+    <h6 class="item-title">
+        <em>2</em>
+        <p>您有信用卡，为您推荐个人POS刷卡机</p>
+    </h6>
+    <div class="credit-ad-box">
+        <a class="clearfix" href="{{page_param['pos_dict']['link']}}">
+          <div class="fl logo">
+            <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/end/wap-fulinmen.png" alt="">
+          </div>
+          <div class="fl msg">
+            <h3>POS刷卡机 用钱不用求人</h3>
+            <p>原价198元 限量1000台</p>
+            <p>费率最低0.35% 实时到账</p>
+          </div>
+          <div class="fr red-packet">
+            <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/end/wap-packet.png" alt="">
+          </div>
+        </a>
+    </div>
+</div>
+{% end %}
+
+<!-- 底部 -->
+<div class="wrap">
+    <div class="foot">
+        <p>{{page_param['service_call']}}（工作日10:00-17:00）</p>
+        <p>{{page_param['service_email']}} | {{page_param['service_qq']}}</p>
+    </div>
+</div>
+
+<input id="insu-tips" type="hidden" value="{{page_param['insu_tips']}}">
+{% if page_param['insu_tips'] == 'Y' %}
+<!-- 弹窗 -->
+<div id="mask" class="mask"></div>
+<!-- 申请弹窗 -->
+<div id="modal-apply-box" class="modal-apply-box">
+    <a id="close-apply-box" class="close-apply-box"></a>
+    <h3>申请有礼</h3>
+    <div class="apply-msg-box">
+        <p>免费送您<span>10000元</span>账户资金安全险
+        <p>或</p>
+        <p>最高<span>100万</span>出行险</p>
+    </div>
+    <a id="free-get-btn" href="javascript:;" class="free-get-btn">免费领取</a>
+    <p class="have-get">已有1,396,287人领取</p>
+</p>
+</div>
+{% end %}
+<!-- 保险弹窗 -->
+<div id="modal-insurance-box" class="modal-insurance-box">
+    <a id="close-insurance-box" class="close-insurance-box" href="javascript:;"><span>5</span>s关闭</a>
+    <div class="insurance-box">
+        <h3><em></em>免费保险领取成功</h3>
+        <h4></h4>
+        <div class="table-box">
+            <table>
+                <thead>
+                    <tr>
+                        <td>保障内容</td>
+                        <td>最高保额</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{{ page_param['static_host'] }}/static/heiniu_loan3/js/wap-end.js?v=1.0.3"></script>
+<div style="display:none;">
+    <script type="text/javascript" src="{{ page_param['static_host'] }}/static/js/statistic.js"></script>
+    <noscript><p><img src="//121.40.16.150/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p ></noscript>
+</div>
+</body>
+</html>

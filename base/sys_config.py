@@ -36,13 +36,28 @@ class SystemConfig(object):
             'user'      : '',
             'password'  : ''
             }
+        
+        
+        self.pycket = {
+            'engine': '',
+            'storage_host': '',
+            'storage_port': '',
+            'storage_password': '',
+            'storage_db_sessions': '',
+            'storage_db_notifications': '',
+            'storage_max_connections': '',
+            'cookies_expires_days': '',
+            'cookies_expires': '',
+            'domain':''
+        }
+        
         self.db_cluster_dict={} #{dbname:{host:db,user,pwd,}}
         
         self.db_cluster=[]
         
         dir = os.path.dirname(os.path.realpath(__file__))
         config_instance = ConfigParser.ConfigParser()
-        config_instance.read(dir+'/config.ini')
+        config_instance.read(dir+'/config2.ini')
         
         for key in self.redis_master:
             if type(self.redis_master[key]) == int:
@@ -64,3 +79,6 @@ class SystemConfig(object):
             for key in self.mysql:
                 each_dict[key] = config_instance.get(db_name, key)
                 self.db_cluster_dict[db_name] = each_dict
+                
+        for key in self.pycket:
+            self.pycket[key] = config_instance.get('pycket', key)

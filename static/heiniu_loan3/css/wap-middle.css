@@ -1,0 +1,408 @@
+/*重置样式*/
+::-moz-placeholder{color:#bf954b}::-webkit-input-placeholder{color:#bf954b}:-ms-input-placeholder{color:#bf954b}input{font-size:inherit;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}input:-webkit-autofill{-webkit-box-shadow:0 0 0px 1000px white inset}input[type="submit"],input[type="button"] button{-webkit-appearance:none}html,body{width:100%}html,body,input{margin:0;font-family:"Microsoft YaHei",arial,simsun,SimHei;color:#787878}html,input,td{padding:0}ul,ol,dl,h1,h2,h3,h4,h5,h6,p{margin-top:0;margin-bottom:0;font-size:inherit;font-weight:normal;-webkit-margin-before:0;-webkit-margin-after:0}dd{margin-left:0}ul,ol{padding-left:0}input,img{border:0}input,label,a{-moz-tap-higlight-color:rgba(0,0,0,0);-webkit-tap-higlight-color:rgba(0,0,0,0);tap-higlight-color:rgba(0,0,0,0)}a{font-size:inherit;color:inherit;text-decoration:none}li{list-style:none}.clearfix{display:block;zoom:1}.clearfix:after{content:" ";display:block;font-size:0;height:0;clear:both;visibility:hidden}.fl{float:left}.fr{float:right}
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.err_popo {
+	position: fixed;
+	z-index: 1000;
+	top: 40%;
+	left: 10%;
+	width: 80%
+}
+.err_popo span {
+	display: block;
+	padding: .22rem 0.02rem;
+	font-size: .22rem;
+	color: #fff;
+	background: rgba(0, 0, 0, .5);
+	border-radius: 8px;
+	text-align: center
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #eaeaea;
+}
+.mt20 {
+	margin-top: .2rem;
+}
+.wrap {
+	width: 7.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.top>em,
+.insurance-box>h3>em,
+.insurance-box a>em {
+	font-size: 0;
+	background-image: url(../images/middle/wap-icons.png);
+	background-repeat: no-repeat;
+	background-size: 1rem;
+}
+
+/*顶部*/
+.top-bg {
+	background: linear-gradient(to right, #fffefd, #fdf7e8);
+}
+.top {
+	position: relative;
+	width: 100%;
+	height: 2rem;
+	padding-left: 1.9rem;
+	padding-top: .6rem;
+	padding-bottom: .6rem;
+	font-size: 0;
+	box-sizing: border-box;
+}
+.top>em {
+	position: absolute;
+	display: block;
+	top: .3rem;
+	left: .5rem;
+	width: 1rem;
+	height: 1.45rem;
+	background-position: 0 0;
+}
+.top>p {
+	font-size: .28rem;
+	line-height: .42rem;
+	color: #4a4a4a;
+}
+.top>p>a {
+	color: #8a6224;
+}
+
+/*form表单*/
+.form-box-bg {
+	padding-bottom: .5rem;
+	background-color: #fff;
+}
+.form-box {
+	width: 6.8rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: .25rem;
+}
+.form-box>h3 {
+	position: relative;
+	width: 3.7rem;
+	height: .32rem;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: .32rem;
+	font-size: .28rem;
+	color: #333;
+	text-align: center;
+}
+.form-box>h3:before,
+.form-box>h3:after {
+	position: absolute;
+	top: .16rem;
+	display: block;
+	width: .8rem;
+	height: 1px;
+	content: "";
+	background-color: #999;
+}
+.form-box>h3:before {
+	left: 0;
+}
+.form-box>h3:after {
+	right: 0;
+}
+.form-box>h4 {
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+	font-size: .28rem;
+	color: #bf954b;
+}
+.form-item-box {
+	padding-bottom: .3rem;
+	font-size: 0;
+}
+.form-item-box .item-name-box {
+	padding-right: .2rem;
+	font-size: .28rem;
+	color: #999;
+	line-height: .7rem;
+}
+.form-item-box .item-radio-box {
+	font-size: 0;
+}
+.form-item-box .item-radio-box>input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+.form-item-box .item-radio-box>label {
+	display: inline-block;
+	width: 1.6rem;
+	height: .7rem;
+	margin-left: .3rem;
+	font-size: .28rem;
+	line-height: .7rem;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: .1rem;
+}
+.form-item-box .item-radio-box>label:nth-of-type(1) {
+	margin-left: 0;
+}
+.form-item-box .item-radio-box>input:checked + label {
+	color: #fff;
+	background-color: #bf954b;
+	border: 1px solid #bf954b;
+}
+.form-salary-box {
+	position: relative;
+	margin-top: .2rem;
+	padding: .3rem;
+	padding-right: 0;
+	background-color: #f6f6f6;
+	border-radius: .1rem;
+	display: none;
+}
+.form-salary-box:before {
+	position: absolute;
+	display: block;
+	top: -.3rem;
+	left: 1.6rem;
+	width: 0;
+	height: 0;
+	content: "";
+	border-bottom: .5rem solid #f6f6f6;
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+}
+.form-salary-box.office-work:before {
+	left: 1.6rem;
+}
+.form-salary-box.civil-servant:before {
+	left: 3.6rem;
+}
+.form-salary-box.private-owner:before {
+	left: 5.4rem;
+}
+.form-salary-box .item-radio-box>label {
+	width: 1.5rem;
+	margin-left: .15rem;
+}
+.form-salary-box .item-name-box {
+	width: 1.15rem;
+}
+.form-box .submit-btn {
+	display: block;
+	width: 100%;
+	height: .9rem;
+	margin-top: .3rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: .36rem;
+	color: #fff;
+	text-align: center;
+	line-height: .9rem;
+	border-radius: .9rem;
+	background: #bf954b;
+}
+
+/*复选框*/
+.form-box .agree-box label>em {
+	background-image: url(../images/home/wap-icons.png);
+	background-repeat: no-repeat;
+	background-size: 6rem;
+}
+.form-box .agree-box>input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+.form-box .agree-box {
+	width: 6.3rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: .2rem;
+	padding-bottom: .3rem;
+	font-size: .24rem;
+	color: #999;
+}
+.form-box .agree-box label>a {
+	color: #bf954b;
+}
+.form-box .agree-box label {
+	position: relative;
+	display: inline-block;
+	width: 5.9rem;
+	padding-left: .3rem;
+	line-height: .38rem;
+}
+.form-box .agree-box label>em {
+	position: absolute;
+	display: inline-block;
+	top: .06rem;
+	left: 0;
+	width: .25rem;
+	height: .25rem;
+	vertical-align: middle;
+	background-position: -1.38rem -2.37rem;
+}
+.form-box .agree-box input:checked + label>em {
+	background-position: -.38rem -2.37rem;
+}
+
+/*保险条款*/
+.insurance-box {
+	padding: .5rem .7rem;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding-top: 0;
+}
+.insurance-box>h3 {
+	width: 100%;
+	height: .6rem;
+	padding-bottom: .4rem;
+	text-align: center;
+	font-size: .32rem;
+	color: #444;
+	line-height: .6rem;
+	border-bottom: 1px dashed #d4d4d4;
+}
+.insurance-box>h3>em {
+	display: inline-block;
+	width: .6rem;
+	height: .6rem;
+	margin-right: .2rem;
+	vertical-align: middle;
+	background-position: -.2rem -1.98rem;
+}
+.insurance-box>h4 {
+	padding-top: .4rem;
+	padding-bottom: .4rem;
+	font-size: .32rem;
+	color: #444444;
+	text-align: center;
+}
+.insurance-box>h4>img {
+	width: 1.46rem;
+	vertical-align: middle;
+}
+.insurance-box .table-box {
+	width: 100%;
+	font-size: 0;
+}
+.insurance-box .table-box>table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.insurance-box .table-box>table thead td {
+	background-color: #fffcf2;
+}
+.insurance-box .table-box>table td {
+	padding-left: .4rem;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+	font-size: .28rem;
+	color: #444;
+	line-height: .32rem;
+	border: 1px solid #f0e7d8;
+}
+.insurance-box .table-box>table>tbody>tr {
+	display: none;
+}
+.insurance-box .table-box>table>tbody>tr:first-child {
+	display: table-row;
+}
+.insurance-box a {
+	display: block;
+	width: 2.1rem;
+	margin-top: .3rem;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: .28rem;
+	color: #1985fc;
+}
+.insurance-box a>em {
+	display: inline-block;
+	margin-left: .1rem;
+	width: .28rem;
+	height: .28rem;
+	vertical-align: middle;
+	background-position: 0 -1.62rem;
+}
+
+/*底部*/
+.foot {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	background-color: #eaeaea;
+}
+.foot>p {
+	text-align: center;
+	font-size: .18rem;
+	color: #b1b1b1;
+	line-height: .32rem;
+}
+
+/*弹窗*/
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .6;
+	display: none;
+	z-index: 5;
+}
+
+/*账户资金安全险+出行保障*/
+.modal-box {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3.75rem;
+	padding-bottom: .5rem;
+	width: 7.5rem;
+	height: 6.6rem;
+	background-color: #fff;
+	display: none;
+	z-index: 6
+}
+.modal-box>h3 {
+	position: relative;
+	width: 7rem;
+	height: .9rem;
+	padding-left: .5rem;
+	font-size: .32rem;
+	line-height: .9rem;
+	color: #fff;
+	background-color: #479dfd;
+}
+.modal-box>h3>span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: .9rem;
+	height: .9rem;
+	text-align: center;
+	line-height: .9rem;
+	font-size: .6rem;
+	color: #fff;
+	font-family: "宋体";
+}
+.modal-box .modal-msg-box {
+	width: 6.9rem;
+	height: 6rem;
+	padding: 0 .3rem;
+	overflow-y: scroll;
+}
+.modal-box .modal-msg-box>p {
+	font-size: .24rem;
+	color: #888;
+	line-height: .48rem;
+}

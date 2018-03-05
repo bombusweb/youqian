@@ -56,5 +56,5 @@ end
 helper = redis_master.register_script(lua)
 dict_to_redis={'key':time.time()}
 json_to_redis=json.dumps(dict_to_redis) 
-expire_time_seconde=50
-print helper(keys=['setkey','filed'], args=[json_to_redis,expire_time_seconde])
+expire_time=500
+print helper(keys=['setkey','filed'], args=[json_to_redis,expire_time])

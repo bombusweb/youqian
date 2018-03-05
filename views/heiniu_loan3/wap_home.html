@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+<head>
+	<title>{{page_param['title']}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{page_param['keywords']}}">
+    <meta name="description" content="{{page_param['description']}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="{{ page_param['static_host'] }}/static/public/public_files/css/LCalendar.css">
+    <link rel="stylesheet" href="{{ page_param['static_host'] }}/static/heiniu_loan3/css/wap.css?v=1.0.2">
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/jquery-3.2.1.min.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/jquery.cookie.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/tap.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/public/public_files/js/library/LCalendar-1.0.0.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/base/wap-base.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/wap-Modal-Captcha.js"></script>
+    <script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=750){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?04a46bd3fbc0f32258e2247ac21de043";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<input id="static-host" type="hidden" value="{{ page_param['static_host'] }}">
+<input id="safety-insurance" type="hidden" value="{{ page_param['explain'] }}">
+<input id="travel-insurance" type="hidden" value="{{ page_param['policy_info_list'] }}">
+
+<!-- banner图 -->
+<div class="wrap banner">
+    <img src="{{ page_param['static_host'] }}/static/heiniu_loan/images/home/logos/wap-heiniu.png" alt="" class="logo">
+</div>
+<!-- 广播 -->
+<div id="broadcast-box" class="broadcast-box">
+    <ul>
+        {% for list in page_param['phone_info_list'] %}
+        <li>{{ list }}</li>
+        {% end %}
+    </ul>
+</div>
+<!-- form表单 -->
+<div class="wrap form-box">
+    <form id="form-box">
+        <input id="captcha" type="hidden" name="captcha">
+        <input id="random" type="hidden" value="{{ page_param['random'] }}">
+        <input id="token" name="token" type="hidden">
+        <input name="channel" type="hidden" value="{{ page_param['V'] }}">
+        <input name="subchannel" type="hidden" value="{{ page_param['subchannel'] }}">
+        <input id="get-check-user-interface" type="hidden" value="{{ page_param['get_check_user_interface'] }}">
+        <input id="get-verify-interface" type="hidden" value="{{ page_param['get_verify_interface'] }}">
+        <input id="get-captcha-interface" type="hidden" value="{{ page_param['get_captcha_interface'] }}">
+        <input type="hidden" name="page" value="{{ page_param['page'] }}">
+        <!-- 输入框集合 -->
+        <div class="input-collection-box">
+            <div class="input-box amount clearfix">
+                <div class="input-name-box fl"></div>
+                <div class="input-text-box fl">
+                    <input type="tel" name="amount" placeholder="请输入借款金额">
+                </div>
+                <span class="fr">元</span>
+            </div>
+            <div class="input-box name clearfix">
+                <div class="input-name-box fl"></div>
+                <div class="input-text-box fl">
+                    <input type="text" name="name" placeholder="请输入您的姓名" value="{{page_param.get('input_name', '')}}">
+                </div>
+                <div class="radio-box">
+                    <input id="male" type="radio" name="sex" value="M">
+                    <label for="male"><em></em>男</label>
+                    <input id="female" type="radio" name="sex" value="F">
+                    <label for="female"><em></em>女</label>
+                </div>
+            </div>
+            <div id="birth" class="input-box birth clearfix">
+                <div class="input-name-box fl"></div>
+                <div class="input-text-box fl">
+                    <input type="text" readonly="readonly" name="birth" placeholder="请选择年龄" value="{{page_param.get('input_birth', '')}}">
+                </div>
+                <span class="fr"></span>
+            </div>
+            <div id="mobile" class="input-box mobile clearfix">
+                <div class="input-name-box fl"></div>
+                <div class="input-text-box fl">
+                    <input type="tel" name="mobile" placeholder="请输入手机号" value="{{page_param.get('input_phone', '')}}">
+                </div>
+            </div>
+            <div id="have-credit-card-box" class="have-credit-card-box">
+                您是否有信用卡？
+                <div class="radio-box">
+                    <input id="no-credit" type="radio" name="credit" value="N">
+                    <label for="no-credit"><em></em>没有</label>
+                    <input id="yes-credit" type="radio" name="credit" value="Y">
+                    <label for="yes-credit"><em></em>有</label>
+                </div>
+            </div>
+        </div>
+        <div class="agree-box clearfix">
+            <input type="hidden" name="agree" value="N">
+            <input id="agree-btn" type="checkbox">
+            <label class="fr" for="agree-btn"><em></em>免费领取1万元<a href="javascript:;">账户资金安全险</a>或最高100万元<a href="javascript:;">出行险</a></label>
+        </div>
+        <a id="submit-btn" class="submit-btn" href="javascript:;">下一步</a>
+        <div class="agree-box clearfix">
+            <label class="fr">点击下一步即表示您已阅读和同意《<a href="javascript:;">用户协议</a>》</label>
+        </div>
+        <div class="notice">
+            <p>平台承诺：所有贷款申请在未成功放款前绝不会收取任何费用，请不要相信任何要求您支付费用的要求。</p>
+        </div>
+    </form>
+</div>
+<!-- 优势 -->
+<div class="wrap">
+    <fieldset class="advantage-box">
+        <legend>黑牛有钱的优势</legend>
+        <div class="item row-1">
+            <em></em>
+            <h6>放款快</h6>
+            <p>5分钟放款</p>
+        </div>
+        <div class="item row-1">
+            <em></em>
+            <h6>利息低</h6>
+            <p>1万1天2元</p>
+        </div>
+        <div class="item row-1">
+            <em></em>
+            <h6>期限长</h6>
+            <p>可以借3年</p>
+        </div>
+        <div class="item row-2">
+            <em></em>
+            <h6>287.39亿元</h6>
+            <p>成功放款</p>
+        </div>
+        <div class="item row-2">
+            <em></em>
+            <h6>136.21万人</h6>
+            <p>借款人数</p>
+        </div>
+        <div class="line"></div>
+    </fieldset>
+</div>
+<!-- 合作机构 -->
+<div class="wrap">
+    <div class="cooperative-box">
+        <h3>合作机构</h3>
+        <div class="logos-box clearfix">
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-papuhui.png" alt="">
+            </div>
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-niwodai.png" alt="">
+            </div>
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-yirendai.png" alt="">
+            </div>
+        </div>
+        <div class="logos-box clearfix">
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-paipaidai.png" alt="">
+            </div>
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-baixingjinrong.png" alt="">
+            </div>
+            <div class="logo fl">
+                <img src="{{ page_param['static_host'] }}/static/heiniu_loan3/images/home/logos/wap-hengchang.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部 -->
+<div class="wrap">
+    <div class="foot">
+        <p>{{page_param['service_call']}}（工作日10:00-17:00）</p>
+        <p>{{page_param['service_email']}} | {{page_param['service_qq']}}</p>
+    </div>
+</div>
+<!-- 弹窗 -->
+<div id="mask" class="mask"></div>
+<!-- 验证成功弹窗 -->
+<div id="success-box" class="success-box">
+    <div class="success-ico"></div>
+    <p>验证成功，下一步</p>
+</div>
+
+<!-- 账户资金安全险+出行保障 -->
+<div id="modal-box" class="modal-box">
+    <h3><strong></strong><span>×</span></h3>
+    <div id="modal-msg-box" class="modal-msg-box"></div>
+</div>
+
+<script>
+    var calendar = new LCalendar();
+    calendar.init({
+        'trigger': 'input[name="birth"]',
+        'type': 'date',
+        'currentDate': '1989-'+ (new Date().getMonth() + 1) + '-' + new Date().getDate(),
+        'minDate': '1900-1-1',
+        'maxDate': new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+    });
+</script>
+<script src="{{ page_param['static_host'] }}/static/heiniu_loan3/js/wap.js?1.0.2"></script>
+<div style="display:none;">
+    <script type="text/javascript" src="{{ page_param['static_host'] }}/static/js/statistic.js"></script>
+    <noscript><p><img src="//121.40.16.150/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p ></noscript>
+</div>
+</body>
+</html>

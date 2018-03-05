@@ -1,0 +1,15 @@
+一致性哈希
+logger
+redis读写分离
+lua脚本
+数据库单例
+BasePageHandler
+supervisor
+ip转换为城市
+用户输入校验：名字
+短连接生成
+定时调用功能
+重启tornado：https://www.pylist.com/topic/1441609975
+依赖注入
+发送短信
+时间问题：时间戳->当地时间+时区，当地时间+时区->时间戳

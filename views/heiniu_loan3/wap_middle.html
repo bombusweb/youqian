@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+<head>
+	<title>{{page_param['title']}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{page_param['keywords']}}">
+    <meta name="description" content="{{page_param['description']}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="{{ page_param['static_host'] }}/static/heiniu_loan3/css/wap-middle.css?v=1.0.1">
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/jquery-3.2.1.min.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/lib/jquery.cookie.js"></script>
+    <script src="{{ page_param['static_host'] }}/static/js/plugins/base/wap-base.js"></script>
+    <script>
+	    (function (doc, win) {
+	        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=750){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?04a46bd3fbc0f32258e2247ac21de043";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<input id="get-middle-interface" type="hidden" value="{{ page_param['get_middle_interface'] }}">
+<!-- 顶部 -->
+<div class="wrap top-bg">
+    <div class="top">
+        <em></em>
+        <p>我们会根据您的信息为您<a href="javascript:;">制定贷款方案</a></p>
+        <p>信息越准确，匹配越精准，放款速度越快！</p>
+    </div>
+</div>
+<!-- form表单 -->
+<div class="wrap mt20 form-box-bg">
+    <form id="form-box" class="form-box">
+        <h3>完善借款信息</h3>
+        <h4>您想借款: <span>{{ page_param.get('amount') }}</span></h4>
+        <div class="form-item-box clearfix">
+            <div class="item-name-box fl">寿险保单</div>
+            <div class="item-radio-box fl">
+                <input id="no-policy" type="radio" name="policy" value="N">
+                <label for="no-policy">没有</label>
+                <input id="yes-policy" type="radio" name="policy" value="Y">
+                <label for="yes-policy">有</label>
+            </div>
+        </div>
+        <div class="form-item-box clearfix">
+            <div class="item-name-box fl">名下房产</div>
+            <div class="item-radio-box fl">
+                <input id="no-house" type="radio" name="house" value="A">
+                <label for="no-house">无房</label>
+                <input id="yes-house-loan" type="radio" name="house" value="B">
+                <label for="yes-house-loan">有房贷</label>
+                <input id="yes-house-no-loan" type="radio" name="house" value="C">
+                <label for="yes-house-no-loan">有房无贷</label>
+            </div>
+        </div>
+        <div class="form-item-box clearfix">
+            <div class="item-name-box fl">名下汽车</div>
+            <div class="item-radio-box fl">
+                <input id="no-car" type="radio" name="car" value="A">
+                <label for="no-car">无车</label>
+                <input id="yes-car-loan" type="radio" name="car" value="B">
+                <label for="yes-car-loan">有车贷</label>
+                <input id="yes-car-no-loan" type="radio" name="car" value="C">
+                <label for="yes-car-no-loan">有车无贷</label>
+            </div>
+        </div>
+        <div class="form-item-box clearfix">
+            <div class="item-name-box fl">您的职业</div>
+            <div id="occupation" class="item-radio-box fl">
+                <input id="office" type="radio" name="occupation" value="A">
+                <label for="office">上班族</label>
+                <input id="civil" type="radio" name="occupation" value="B">
+                <label for="civil">公务员</label>
+                <input id="private" type="radio" name="occupation" value="C">
+                <label for="private">私营业主</label>
+            </div>
+        </div>
+        <div id="form-salary-box" class="form-salary-box">
+            <div class="form-item-box clearfix">
+                <div class="item-name-box fl">月收入</div>
+                <div class="item-radio-box fl">
+                    <input id="less-than-five" type="radio" name="salary" value="A">
+                    <label for="less-than-five">5千以下</label>
+                    <input id="more-than-five" type="radio" name="salary" value="B">
+                    <label for="more-than-five">5千-1万</label>
+                    <input id="more-than-one" type="radio" name="salary" value="C">
+                    <label for="more-than-one">1万以上</label>
+                </div>
+            </div>
+            <div class="form-item-box clearfix">
+                <div class="item-name-box fl">工作时间</div>
+                <div class="item-radio-box fl">
+                    <input id="less-than-six-month" type="radio" name="experience" value="A">
+                    <label for="less-than-six-month">6个月内</label>
+                    <input id="less-than-one-year" type="radio" name="experience" value="B">
+                    <label for="less-than-one-year">12个月内</label>
+                    <input id="more-than-one-year" type="radio" name="experience" value="C">
+                    <label for="more-than-one-year">1年以上</label>
+                </div>
+            </div>
+        </div>
+        {% if page_param['show_agree'] == 'Y' %}
+        <div id="agree-box" class="agree-box clearfix">
+            <input type="hidden" name="agree" value="N">
+            <input id="agree-btn" type="checkbox">
+            <label class="fr" for="agree-btn"><em></em>免费领取1万元<a href="javascript:;">账户资金安全险</a>或最高100万元<a href="javascript:;">出行险</a></label>
+        </div>
+        {% end %}
+        <a id="submit-btn" class="submit-btn" href="javascript:;">确认提交</a>
+    </form>
+</div>
+{% if page_param.get('policy_no') and page_param.get('policy_info')%}
+<!-- 保险条款 -->
+<div id="insurance-box" class="wrap insurance-box">
+    <h3><em></em>免费保险领取成功</h3>
+    <h4>
+        <img src="{{ page_param['static_host'] }}/static/images/logos/wap_{{page_param['policy_info']['policy_company']}}.png" alt="">
+        {{ page_param['policy_info']['policy_name'] }}
+    </h4>
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <td>保障内容</td>
+                    <td>最高保额</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for info in page_param['policy_info']['policy_infos'] %}
+                <tr>
+                    <td>{{info['content']}}</td>
+                    <td>{{info['amount']}}</td>
+                </tr>
+            {% end %}
+            </tbody>
+        </table>
+    </div>
+    {% if len(page_param['policy_info']['policy_infos']) > 1 %}
+        <a id="to-see-detail" href="javascript:;">查看保险详情<em></em></a>
+    {% end %}
+</div>
+{% end %}
+<!-- 底部 -->
+<div class="wrap">
+    <div class="foot">
+        <p>{{page_param['service_call']}}（工作日10:00-17:00）</p>
+        <p>{{page_param['service_email']}} | {{page_param['service_qq']}}</p>
+    </div>
+</div>
+<!-- 弹窗 -->
+<input id="safety-insurance" type="hidden" value="{{ page_param['explain'] }}">
+<input id="travel-insurance" type="hidden" value="{{ page_param['policy_info_list'] }}">
+<div id="mask" class="mask"></div>
+<!-- 账户资金安全险+出行保障 -->
+<div id="modal-box" class="modal-box">
+    <h3><strong></strong><span>×</span></h3>
+    <div id="modal-msg-box" class="modal-msg-box"></div>
+</div>
+<script src="{{ page_param['static_host'] }}/static/heiniu_loan3/js/wap-middle.js?v=1.0.1"></script>
+<div style="display:none;">
+    <script type="text/javascript" src="{{ page_param['static_host'] }}/static/js/statistic.js"></script>
+    <noscript><p><img src="//121.40.16.150/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p ></noscript>
+</div>
+</body>
+</html>

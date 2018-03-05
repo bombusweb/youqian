@@ -1,0 +1,91 @@
+2018-01-03 16:06:42,634 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:42,927 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:43,927 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:44,007 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:45,009 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:45,078 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:46,081 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:46,167 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:47,170 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:47,240 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:48,242 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:48,312 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:49,312 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:49,388 performence_probe.py [line:17] root INFO end
+2018-01-03 16:06:50,388 performence_probe.py [line:12] root INFO begin
+2018-01-03 16:06:50,484 performence_probe.py [line:17] root INFO end
+2018-01-03 16:09:06,786 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:07,371 performence_probe.py [line:17] root INFO snetio(bytes_sent=341121884L, bytes_recv=359918181L, packets_sent=599744L, packets_recv=754854L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:07,372 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:08,374 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:08,479 performence_probe.py [line:17] root INFO snetio(bytes_sent=341123668L, bytes_recv=359955545L, packets_sent=599762L, packets_recv=754883L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:08,480 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:09,480 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:09,555 performence_probe.py [line:17] root INFO snetio(bytes_sent=341125308L, bytes_recv=359992907L, packets_sent=599778L, packets_recv=754912L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:09,555 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:10,556 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:10,641 performence_probe.py [line:17] root INFO snetio(bytes_sent=341127366L, bytes_recv=360030469L, packets_sent=599800L, packets_recv=754943L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:10,641 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:11,644 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:11,724 performence_probe.py [line:17] root INFO snetio(bytes_sent=341128868L, bytes_recv=360067833L, packets_sent=599813L, packets_recv=754972L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:11,724 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:12,726 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:12,799 performence_probe.py [line:17] root INFO snetio(bytes_sent=341131525L, bytes_recv=360105812L, packets_sent=599836L, packets_recv=755005L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:12,799 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:13,801 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:13,918 performence_probe.py [line:17] root INFO snetio(bytes_sent=341133111L, bytes_recv=360143236L, packets_sent=599851L, packets_recv=755035L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:13,918 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:14,920 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:15,005 performence_probe.py [line:17] root INFO snetio(bytes_sent=341151579L, bytes_recv=360182461L, packets_sent=599884L, packets_recv=755079L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:15,005 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:16,006 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:16,086 performence_probe.py [line:17] root INFO snetio(bytes_sent=341154971L, bytes_recv=360220330L, packets_sent=599906L, packets_recv=755113L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:16,086 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:17,088 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:17,191 performence_probe.py [line:17] root INFO snetio(bytes_sent=341156778L, bytes_recv=360257785L, packets_sent=599924L, packets_recv=755143L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:17,191 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:18,194 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:18,267 performence_probe.py [line:17] root INFO snetio(bytes_sent=341159289L, bytes_recv=360295818L, packets_sent=599947L, packets_recv=755177L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:18,267 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:19,269 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:19,344 performence_probe.py [line:17] root INFO snetio(bytes_sent=341161227L, bytes_recv=360333380L, packets_sent=599967L, packets_recv=755208L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:19,344 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:20,345 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:20,428 performence_probe.py [line:17] root INFO snetio(bytes_sent=341162981L, bytes_recv=360370958L, packets_sent=599984L, packets_recv=755238L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:20,428 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:21,430 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:21,507 performence_probe.py [line:17] root INFO snetio(bytes_sent=341164591L, bytes_recv=360408536L, packets_sent=599999L, packets_recv=755268L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:21,507 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:22,509 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:22,582 performence_probe.py [line:17] root INFO snetio(bytes_sent=341167109L, bytes_recv=360446819L, packets_sent=600019L, packets_recv=755301L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:22,582 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:23,584 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:23,671 performence_probe.py [line:17] root INFO snetio(bytes_sent=341168893L, bytes_recv=360484667L, packets_sent=600037L, packets_recv=755333L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:23,671 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:24,673 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:24,747 performence_probe.py [line:17] root INFO snetio(bytes_sent=341172025L, bytes_recv=360522031L, packets_sent=600053L, packets_recv=755362L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:24,749 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:25,749 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:25,829 performence_probe.py [line:17] root INFO snetio(bytes_sent=341181379L, bytes_recv=360560308L, packets_sent=600079L, packets_recv=755403L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:25,829 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:26,832 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:26,913 performence_probe.py [line:17] root INFO snetio(bytes_sent=341183982L, bytes_recv=360600600L, packets_sent=600099L, packets_recv=755436L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:26,913 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:27,913 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:27,990 performence_probe.py [line:17] root INFO snetio(bytes_sent=341185887L, bytes_recv=360638030L, packets_sent=600119L, packets_recv=755466L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:27,990 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:28,990 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:29,065 performence_probe.py [line:17] root INFO snetio(bytes_sent=341187485L, bytes_recv=360675394L, packets_sent=600134L, packets_recv=755495L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:29,065 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:30,066 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:30,147 performence_probe.py [line:17] root INFO snetio(bytes_sent=341189149L, bytes_recv=360713098L, packets_sent=600150L, packets_recv=755528L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:30,148 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:31,148 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:31,224 performence_probe.py [line:17] root INFO snetio(bytes_sent=341190933L, bytes_recv=360750460L, packets_sent=600168L, packets_recv=755557L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:31,224 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:32,226 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:32,299 performence_probe.py [line:17] root INFO snetio(bytes_sent=341193314L, bytes_recv=360788802L, packets_sent=600185L, packets_recv=755593L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:32,299 performence_probe.py [line:20] root INFO end
+2018-01-03 16:09:33,302 performence_probe.py [line:14] root INFO begin
+2018-01-03 16:09:33,388 performence_probe.py [line:17] root INFO snetio(bytes_sent=341194816L, bytes_recv=360826166L, packets_sent=600198L, packets_recv=755622L, errin=0L, errout=0L, dropin=0L, dropout=0L)
+2018-01-03 16:09:33,390 performence_probe.py [line:20] root INFO end

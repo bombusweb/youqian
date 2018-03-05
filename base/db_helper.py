@@ -45,3 +45,6 @@ class MySQLHelper(object):
         return self.db_conn[db_name]
     def get_db_connect(self,id_no,phone):
         pass
+    
+    
+    
